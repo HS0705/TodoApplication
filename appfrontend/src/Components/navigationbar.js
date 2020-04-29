@@ -32,34 +32,18 @@ const Styles = styled.div`
   render() {
     const signIn = (
       <Styles>
-            <Navbar expand="lg">
-              <div className="container-fluid">
-                <a className="navbar-brand">
-                    <img src={logo} width="30" height ="30" alt="pic" />
-                </a>
-                <Navbar.Brand href="/">Notebook</Navbar.Brand>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                 <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>  
                   <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
                   <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
-                  <Nav.Item><Nav.Link href="/create">NewTask</Nav.Link></Nav.Item>
-                  <Nav.Item><Nav.Link href="/view">View Tasks</Nav.Link></Nav.Item>
                 </Nav>
               </Navbar.Collapse>
-              </div>
-            </Navbar>
           </Styles>
     )
     
     const userProfile=(
       <Styles>
-            <Navbar exapand="lg">
-              <div className="container-fluid">
-                <a className="navbar-brand">
-                    <img src={logo} width="30" height ="30" alt="pic" />
-                </a>
-                <Navbar.Brand href="/">Todo Application</Navbar.Brand>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                 <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>  
@@ -69,23 +53,20 @@ const Styles = styled.div`
                   <Nav.Item><Nav.Link href="" onClick={this.logOut.bind(this)}>Logout</Nav.Link></Nav.Item>
                 </Nav>
               </Navbar.Collapse>
-              </div>
-            </Navbar>
           </Styles>
     )
     return (
       <Styles>
-          <Navbar expand="lg">
-            <div className="container-fluid">
-            <Navbar.Toggle aria-controls="basic-navbar-nav">
-              <span className="navbar-toggle-icon"></span>
-            </Navbar.Toggle>
+          <Navbar bg="dark" >
+            <Navbar.Brand href="/">
+              <img src={logo} width="30" height ="30" alt="pic" /> {'  '} 
+              Digital Reminder
+            </Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">  
                 <Nav.Item>{localStorage.usertoken ? userProfile : signIn}</Nav.Item>
               </Nav>
             </Navbar.Collapse>
-            </div>
           </Navbar>
           </Styles>
     )

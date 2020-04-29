@@ -36,8 +36,7 @@ onChangeTaskLinks(event){
     this.setState({task_links: event.target.value});
 }
 onChangeTaskPriority(event){
-    this.setState({task_priority: event.target.value,
-        color: this.onTextColor()});
+    this.setState({task_priority: event.target.value});
 }
 onChangeTaskStatus(event){
     this.setState({task_status: event.target.value});

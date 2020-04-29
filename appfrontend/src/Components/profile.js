@@ -8,11 +8,10 @@ export default class Profile extends Component{
             fname:'',
             lname:'',
             email:'',
-            password:''
         }
     }
     componentDidMount() {
-        const token =localStorage.user(token);
+        const token =localStorage.usertoken;
         const decoded = jwt_decode(token)
         this.setState({
             fname:decoded.fname,
@@ -22,17 +21,28 @@ export default class Profile extends Component{
     }
 render() {
     return(
-        <div className="container">
-            <div className="jumbotron mt-5">
+        <div className="container-fluid">
                 < div className="col-sm-8 mx-auto">
                     <h1 align="center">Profile</h1>
                 </div>
                 <div>
-                {this.state.lname},{this.state.fname}
-                </div>
-                <div>
-                    {this.state.email}
-                </div>
+                 <span><p>Hello{this.state.fname} </p></span>
+      
+                 <h3>Account Information</h3>
+                 <div className="container-fluid">
+                     <div>
+                         <label>First name : </label>
+                         {this.state.fname}
+                     </div>
+                     <div>
+                         <label>Last name : </label>
+                         {this.state.lname}
+                     </div>
+                     <div>
+                         <label>Email : </label>
+                         {this.state.email}
+                     </div>
+                 </div>
             </div>
         </div>
     )

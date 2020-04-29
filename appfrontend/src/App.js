@@ -18,7 +18,7 @@ export default class App extends Component {
   render(){
   return (
     <Router>
-        <div className="container">
+        <div className="container-fluid">
           <NavigationBar />
           <Route path = "/" exact component={HomeView} />
           <Route path ="/edit/:id" component={EditTask} />
