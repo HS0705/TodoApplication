@@ -99,9 +99,14 @@ onSubmit(event) {
                 </Form.Group>
                 <Form.Group controlId="statusForm.ControlSelect" id ="status">
                     <Form.Label>Status</Form.Label>              
-                    <Form.Control type="text" value="Assigned" 
+                    <Form.Control as="select" value={this.state.task_status} 
                         onChange={this.onChangeTaskStatus}>
-                    </Form.Control>
+                        <option>Select</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="Started">Started</option>
+                        <option value="InProgress">InProgress</option>
+                        <option value="Completed">Completed</option>
+                        </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="commentsForm.ControlSelect">
                     <label>Comments:</label>
